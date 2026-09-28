@@ -1,6 +1,7 @@
-from pydantic import BaseModel, EmailStr
-from typing import Optional
+from pydantic import BaseModel
+
 from backend.database.Item import Item
+
 
 #Composistion - an order is composed of multiple items, hence it has a list of Item objects
 class Order(BaseModel):

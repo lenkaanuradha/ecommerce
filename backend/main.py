@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from backend.api import users, orders, items
+
+from backend.api import items, orders, users
 
 app = FastAPI()
 

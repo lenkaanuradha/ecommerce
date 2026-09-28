@@ -1,8 +1,10 @@
 import os
-from fastapi import APIRouter
+
 from bson import ObjectId
+from fastapi import APIRouter
 from pydantic import BaseModel
 from pymongo import MongoClient
+
 from backend.database.User import User
 
 MONGOURL= os.getenv("MONGOURL")

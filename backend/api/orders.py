@@ -1,7 +1,9 @@
 import os
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 from pymongo import MongoClient
+
 from backend.database.Item import Item
 
 MONGOURL= os.getenv("MONGOURL")
@@ -18,9 +20,7 @@ class createOrder(BaseModel):
 #coupling is used here as it depends on the Item class to create an order
  @router.post("/create_order/{userid}")
  async def create_order(userid: str,items: list[Item],discount: float):
-    userid = userid
     total_price = 0
-    discount = discount
     total_items = []
     for item in items:
         total_price += item.price * item.quantity
